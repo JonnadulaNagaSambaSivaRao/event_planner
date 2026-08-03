@@ -25,6 +25,7 @@
 # Venue Booked
 # Catering Booked
 # Photographer Booked
+# Payment paid or not
 
 #Step 5: Event Tracking
 
@@ -79,18 +80,28 @@ def finalize_plan():
 
 
 
+
+
 # Step 4
 
 def booking():
 
     print("\nBooking Services...\n")
 
-    planner_data["booking_status"] = "Confirmed"
     planner_data["booking_id"] = "EVT2026001"
 
-    print("Booking Confirmed")
-    print("Booking ID :", planner_data["booking_id"])
+    payment = input("Payment Status (Paid/Not Paid): ").strip().lower()
 
+    if payment == "paid":
+        planner_data["payment_status"] = "Paid"
+        planner_data["booking_status"] = "Confirmed"
+    else:
+        planner_data["payment_status"] = "Pending"
+        planner_data["booking_status"] = "Waiting for Payment"
+
+    print("\nBooking ID :", planner_data["booking_id"])
+    print("Payment Status :", planner_data["payment_status"])
+    print("Booking Status :", planner_data["booking_status"])
 
 # Step 5
 
@@ -98,6 +109,13 @@ def tracking():
 
     print("\nTracking Event\n")
 
+    print("Booking ID :", planner_data["booking_id"])
+    print("Payment Status :", planner_data["payment_status"])
     print("Booking Status :", planner_data["booking_status"])
-    print("Remaining Payment : ₹10000")
-    print("Event Status : Ready")
+
+    if planner_data["payment_status"] == "Paid":
+        print("Remaining Payment : ₹0")
+        print("Event Status : Ready")
+    else:
+        print("Remaining Payment : ₹10000")
+        print("Event Status : Waiting for Payment")
