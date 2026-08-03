@@ -135,57 +135,6 @@ The assistant generates
 
 ---
 
-# 🖥 Sample Output
-
-```text
-================================================
-        AI EVENT PLANNER
-================================================
-
-Event Type : Birthday
-
-Budget : 50000
-
-Guests : 100
-
-City : Hyderabad
-
-Date : 25-09-2026
-
-Searching Services...
-
-Venue :
-Royal Convention Hall
-
-Food :
-Taste Catering
-
-Decoration :
-Dream Decorations
-
-Photographer :
-Pixel Studio
-
-Estimated Cost :
-₹40,000
-
-Booking Confirmed
-
-Booking ID :
-EVT2026001
-
-Booking Status :
-Confirmed
-
-Remaining Payment :
-₹10,000
-
-Event Status :
-Ready
-```
-
----
-
 # 🛠 Technologies Used
 
 | Technology | Purpose |
